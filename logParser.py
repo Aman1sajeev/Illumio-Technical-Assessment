@@ -165,7 +165,7 @@ def parse_flow_logs(flow_log_file, lookup_file):
     with open(flow_log_file, 'r') as file:
         for line in file:
             fields = line.strip().split()
-            if len(fields) >= 7:
+            if len(fields) == 14:
                 dstport = int(fields[-8])
                 protocol_number = int(fields[-7])
                 protocol = protocol_number_to_keyword.get(protocol_number, 'Unknown')
